@@ -1,0 +1,4 @@
+D:/yiming/work/TY1475_RX_HIGH.X/_build/TY1475_RX_HIGH/default/CMakeFiles/TY1475_RX_HIGH_default_default_XC8_compile.dir
+D:/yiming/work/TY1475_RX_HIGH.X/_build/TY1475_RX_HIGH/default/CMakeFiles/default.elf.dir
+D:/yiming/work/TY1475_RX_HIGH.X/_build/TY1475_RX_HIGH/default/CMakeFiles/edit_cache.dir
+D:/yiming/work/TY1475_RX_HIGH.X/_build/TY1475_RX_HIGH/default/CMakeFiles/rebuild_cache.dir
