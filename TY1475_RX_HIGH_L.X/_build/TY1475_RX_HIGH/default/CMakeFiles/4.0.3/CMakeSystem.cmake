@@ -3,7 +3,7 @@ set(CMAKE_HOST_SYSTEM_NAME "Windows")
 set(CMAKE_HOST_SYSTEM_VERSION "10.0.26100")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "")
 
-include("D:/yiming/work/TY1475_RX_HIGH.X/cmake/TY1475_RX_HIGH/default/.generated/toolchain.cmake")
+include("D:/yiming/github/TY1475_RX_HIGH_L/TY1475_RX_HIGH_L.X/cmake/TY1475_RX_HIGH/default/.generated/toolchain.cmake")
 
 set(CMAKE_SYSTEM "Generic")
 set(CMAKE_SYSTEM_NAME "Generic")

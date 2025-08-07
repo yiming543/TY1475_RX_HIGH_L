@@ -11,41 +11,41 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"229 D:\yiming\work\TY1475_RX_HIGH_L.X\main.c
+"233 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\main.c
 [v _Exception_handling Exception_handling `(v  1 e 1 0 ]
-"241
+"247
 [v _DRL_ON DRL_ON `(v  1 e 1 0 ]
-"258
+"264
 [v _LED_output LED_output `(v  1 e 1 0 ]
-"396
+"403
 [v _check_input check_input `(v  1 e 1 0 ]
-"438
+"445
 [v _getFrameData getFrameData `(v  1 e 1 0 ]
-"504
+"511
 [v _ECCP3_CallBack ECCP3_CallBack `(v  1 e 1 0 ]
-"578
+"585
 [v _TMR0_EvenHandler TMR0_EvenHandler `(v  1 e 1 0 ]
-"589
+"596
 [v _main main `(v  1 e 1 0 ]
-"59 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/eccp3.c
+"59 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/eccp3.c
 [v _ECCP3_Initialize ECCP3_Initialize `(v  1 e 1 0 ]
 "80
 [v _ECCP3_CaptureISR ECCP3_CaptureISR `(v  1 e 1 0 ]
-"64 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/epwm1.c
+"64 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/epwm1.c
 [v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 1 0 ]
 "90
 [v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 1 0 ]
-"52 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/interrupt_manager.c
+"52 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
-"50 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/mcc.c
+"50 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "63
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "77
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
-"55 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/pin_manager.c
+"55 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"64 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr0.c
+"64 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "108
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
@@ -55,11 +55,11 @@
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 "144
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
-"63 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr1.c
+"63 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 "113
 [v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
-"62 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr2.c
+"62 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 [s S62 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
@@ -226,7 +226,7 @@
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2311
 [v _LATC LATC `VEuc  1 e 1 @270 ]
-[s S619 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S618 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -236,8 +236,8 @@
 `uc 1 LATC7 1 0 :1:7 
 ]
 "2328
-[u S628 . 1 `S619 1 . 1 0 ]
-[v _LATCbits LATCbits `VES628  1 e 1 @270 ]
+[u S627 . 1 `S618 1 . 1 0 ]
+[v _LATCbits LATCbits `VES627  1 e 1 @270 ]
 "2373
 [v _LATE LATE `VEuc  1 e 1 @272 ]
 "2666
@@ -289,15 +289,15 @@
 [v _CCP3CON CCP3CON `VEuc  1 e 1 @787 ]
 "8074
 [v _PLLR PLLR `VEb  1 e 0 @1238 ]
-"113 D:\yiming\work\TY1475_RX_HIGH_L.X\main.c
+"117 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\main.c
 [v _rx_data rx_data `uc  1 e 1 0 ]
-"114
+"118
 [v _data_1byte_OK data_1byte_OK `VEa  1 e 1 0 ]
-"115
+"119
 [v _fFrame_OK fFrame_OK `a  1 e 1 0 ]
-"116
+"120
 [v _data_buf data_buf `[11]uc  1 e 11 0 ]
-"117
+"121
 [v _step step `uc  1 e 1 0 ]
 [s S561 . 1 `a 1 b0 1 0 :1:0 
 `a 1 b1 1 0 :1:1 
@@ -308,7 +308,7 @@
 `a 1 b6 1 0 :1:6 
 `a 1 b7 1 0 :1:7 
 ]
-"119
+"123
 [u S570 . 1 `S561 1 . 1 0 `uc 1 Byte 1 0 ]
 [v _D2 D2 `S570  1 e 1 0 ]
 [s S573 . 1 `a 1 b0 1 0 :1:0 
@@ -320,7 +320,7 @@
 `a 1 turnLight_R 1 0 :1:6 
 `a 1 b7 1 0 :1:7 
 ]
-"120
+"124
 [u S582 . 1 `S573 1 . 1 0 `uc 1 Byte 1 0 ]
 [v _D3 D3 `S582  1 e 1 0 ]
 [s S585 . 1 `a 1 turnLight_R 1 0 :1:0 
@@ -332,39 +332,39 @@
 `a 1 b6 1 0 :1:6 
 `a 1 b7 1 0 :1:7 
 ]
-"121
+"125
 [u S594 . 1 `S585 1 . 1 0 `uc 1 Byte 1 0 ]
 [v _csFlag csFlag `S594  1 e 1 0 ]
-"123
+"127
 [v _T10MS_CNT T10MS_CNT `VEuc  1 e 1 0 ]
-"125
+"129
 [v _fException fException `a  1 e 1 0 ]
-"126
+"130
 [v _fException2 fException2 `a  1 e 1 0 ]
-"144
+"148
 [v _CS CS `[64]uc  1 s 64 CS ]
-"58 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr0.c
+"58 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr0.c
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
 "59
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"57 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr1.c
+"57 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
-"589 D:\yiming\work\TY1475_RX_HIGH_L.X\main.c
+"596 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"629
+"636
 } 0
-"438
+"445
 [v _getFrameData getFrameData `(v  1 e 1 0 ]
 {
-"502
+"509
 } 0
-"396
+"403
 [v _check_input check_input `(v  1 e 1 0 ]
 {
-"436
+"443
 } 0
-"50 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/mcc.c
+"50 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "61
@@ -374,17 +374,17 @@
 {
 "81
 } 0
-"62 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr2.c
+"62 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 {
 "77
 } 0
-"63 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr1.c
+"63 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 {
 "84
 } 0
-"64 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr0.c
+"64 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
 "85
@@ -395,59 +395,59 @@
 [v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "142
 } 0
-"55 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/pin_manager.c
+"55 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "97
 } 0
-"63 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/mcc.c
+"63 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "75
 } 0
-"64 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/epwm1.c
+"64 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/epwm1.c
 [v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 1 0 ]
 {
 "88
 } 0
-"59 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/eccp3.c
+"59 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/eccp3.c
 [v _ECCP3_Initialize ECCP3_Initialize `(v  1 e 1 0 ]
 {
 "78
 } 0
-"258 D:\yiming\work\TY1475_RX_HIGH_L.X\main.c
+"264 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\main.c
 [v _LED_output LED_output `(v  1 e 1 0 ]
 {
-"378
+"384
 [v LED_output@i i `uc  1 a 1 8 ]
-"259
+"265
 [v LED_output@crc8 crc8 `uc  1 a 1 7 ]
-"394
+"401
 } 0
-"241
+"247
 [v _DRL_ON DRL_ON `(v  1 e 1 0 ]
 {
-"242
+"248
 [v DRL_ON@pwm_duty pwm_duty `us  1 a 2 4 ]
-"256
+"262
 } 0
-"229
+"233
 [v _Exception_handling Exception_handling `(v  1 e 1 0 ]
 {
-"239
+"245
 } 0
-"90 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/epwm1.c
+"90 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/epwm1.c
 [v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 1 0 ]
 {
 [v EPWM1_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
 "97
 } 0
-"52 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/interrupt_manager.c
+"52 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
 "74
 } 0
-"108 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr0.c
+"108 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 {
 "110
@@ -464,12 +464,12 @@
 {
 "147
 } 0
-"578 D:\yiming\work\TY1475_RX_HIGH_L.X\main.c
+"585 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\main.c
 [v _TMR0_EvenHandler TMR0_EvenHandler `(v  1 e 1 0 ]
 {
-"584
+"591
 } 0
-"80 D:\yiming\work\TY1475_RX_HIGH_L.X\mcc_generated_files/eccp3.c
+"80 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\mcc_generated_files/eccp3.c
 [v _ECCP3_CaptureISR ECCP3_CaptureISR `(v  1 e 1 0 ]
 {
 [s S492 . 2 `uc 1 ccpr3l 1 0 `uc 1 ccpr3h 1 1 ]
@@ -479,29 +479,29 @@
 [v ECCP3_CaptureISR@module module `S497  1 a 2 4 ]
 "93
 } 0
-"504 D:\yiming\work\TY1475_RX_HIGH_L.X\main.c
+"511 D:\yiming\github\TY1475_RX_HIGH_L\TY1475_RX_HIGH_L.X\main.c
 [v _ECCP3_CallBack ECCP3_CallBack `(v  1 e 1 0 ]
 {
 [v ECCP3_CallBack@capturedValue capturedValue `us  1 p 2 0 ]
-"505
-[v ECCP3_CallBack@pluse_width_LO pluse_width_LO `us  1 s 2 pluse_width_LO ]
-"506
-[v ECCP3_CallBack@pluse_width_HI pluse_width_HI `us  1 s 2 pluse_width_HI ]
-"507
-[v ECCP3_CallBack@HI_us HI_us `uc  1 s 1 HI_us ]
-"508
-[v ECCP3_CallBack@LO_us LO_us `uc  1 s 1 LO_us ]
-"509
-[v ECCP3_CallBack@diff_us diff_us `uc  1 s 1 diff_us ]
-"510
-[v ECCP3_CallBack@falling_edge_time falling_edge_time `us  1 s 2 falling_edge_time ]
-"511
-[v ECCP3_CallBack@rising_edge_time rising_edge_time `us  1 s 2 rising_edge_time ]
 "512
-[v ECCP3_CallBack@rise_edge_flag rise_edge_flag `a  1 s 1 rise_edge_flag ]
+[v ECCP3_CallBack@pluse_width_LO pluse_width_LO `us  1 s 2 pluse_width_LO ]
 "513
-[v ECCP3_CallBack@fHead fHead `a  1 s 1 fHead ]
+[v ECCP3_CallBack@pluse_width_HI pluse_width_HI `us  1 s 2 pluse_width_HI ]
 "514
+[v ECCP3_CallBack@HI_us HI_us `uc  1 s 1 HI_us ]
+"515
+[v ECCP3_CallBack@LO_us LO_us `uc  1 s 1 LO_us ]
+"516
+[v ECCP3_CallBack@diff_us diff_us `uc  1 s 1 diff_us ]
+"517
+[v ECCP3_CallBack@falling_edge_time falling_edge_time `us  1 s 2 falling_edge_time ]
+"518
+[v ECCP3_CallBack@rising_edge_time rising_edge_time `us  1 s 2 rising_edge_time ]
+"519
+[v ECCP3_CallBack@rise_edge_flag rise_edge_flag `a  1 s 1 rise_edge_flag ]
+"520
+[v ECCP3_CallBack@fHead fHead `a  1 s 1 fHead ]
+"521
 [v ECCP3_CallBack@data_cnt data_cnt `uc  1 s 1 data_cnt ]
-"576
+"583
 } 0

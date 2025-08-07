@@ -61,6 +61,10 @@
 // 近燈+行車 = 近燈+行車
 // TY1475_HIGH_TX V01
 
+// 20250807 V02 CS:F6E3
+// 修正unlock信號 亮P2
+// 修正斷線 亮近燈+行車+P2
+
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/pin_manager.h"
 #include <pic.h>
@@ -68,7 +72,7 @@
 #include <stdio.h>  //printf
 
 // 有定義就左燈,無定義就右燈
- #define LIGHT_LEFT
+#define LIGHT_LEFT
 
 typedef union {
   struct {
@@ -137,9 +141,9 @@ bool fException2 = 0;
 #define DRL_OFF() EPWM1_LoadDutyValue(PWM_DUTY_0_PERCENT) // DRL PWM 0%
 
 #define PWM_DUTY_0_PERCENT (0)
-#define PWM_DUTY_10_PERCENT (49)
-#define PWM_DUTY_40_PERCENT (199)
-#define PWM_DUTY_100_PERCENT (499)
+#define PWM_DUTY_10_PERCENT (50)
+#define PWM_DUTY_40_PERCENT (200)
+#define PWM_DUTY_100_PERCENT (500)
 
 static uint8_t CS[64] = {
     // 行車,晝行,近燈,遠燈,左方,右方
@@ -228,11 +232,13 @@ static uint8_t CS[64] = {
 // 特殊信號(unlock) 亮P2
 void Exception_handling(void) {
   if ((data_buf[2] == 6) && (data_buf[10] == 0xD5)) {
-    P2_EN_SetHigh();
+    P2_ON(); // P2亮
     fException = 1;
-    EPWM1_LoadDutyValue(PWM_DUTY_0_PERCENT); // 0%
-    HiBeam_OFF();                            // 遠燈 OFF
-    T10MS_CNT = 0;                           // 重置2000ms計數器
+    // EPWM1_LoadDutyValue(PWM_DUTY_0_PERCENT); // 0%
+    LoBeam_OFF();  // 遠燈 OFF
+    HiBeam_OFF();  // 遠燈 OFF
+    POS_ON();      // POS ON
+    T10MS_CNT = 0; // 重置2000ms計數器
   } else {
     fException = 0;
   }
@@ -324,7 +330,7 @@ void LED_output(void) {
     LoBeam_ON(); // 近燈 ON
     HiBeam_ON(); // 遠燈 ON
     // POS_ON();     // POS ON
-    DRL_OFF();   // 晝行 OFF
+    DRL_OFF(); // 晝行 OFF
   } else if (csFlag.RunLight == 1 && csFlag.LoBeam == 0 && csFlag.HiBeam == 0 &&
              csFlag.DRL == 0) { // 8
     // 行車 = 行車
@@ -391,6 +397,7 @@ void LED_output(void) {
   // } else {
   //   // LED6_SetLow();
   // }
+
 }
 
 void check_input(void) {
@@ -620,10 +627,10 @@ void main(void) {
     } else {
       // 2秒沒收到正確的資料開啟近燈+P2
       fException2 = 0;
-      // fPWM1_ON = 0;
-      EPWM1_LoadDutyValue(PWM_DUTY_100_PERCENT); // PWM 100%
-      HiBeam_OFF();                              // 遠燈 OFF
-      P2_EN_SetHigh();                           // P2亮
+      P2_ON();      // P2亮
+      HiBeam_OFF(); // 遠燈 OFF
+      LoBeam_ON();  // 近燈 ON
+      POS_ON();     // POS ON
     }
   }
 }
