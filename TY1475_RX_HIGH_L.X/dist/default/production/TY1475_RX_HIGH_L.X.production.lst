@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.46 build 20240104201356 
-                                                                                               Thu Aug 07 10:01:03 2025
+                                                                                               Tue Sep 02 13:39:01 2025
 
 Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1 
      1                           	processor	16F1936
@@ -2164,7 +2164,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2150 ;;
   2151 ;; *************** function _main *****************
   2152 ;; Defined at:
-  2153 ;;		line 596 in file "main.c"
+  2153 ;;		line 599 in file "main.c"
   2154 ;; Parameters:    Size  Location     Type
   2155 ;;		None
   2156 ;; Auto vars:     Size  Location     Type
@@ -2205,10 +2205,10 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2191                           ; Regs used in _main: [wreg-fsr1h+status,2+status,0+pclath+cstack]
   2192                           
   2193                           
-  2194                           ;main.c: 598:   SYSTEM_Initialize();
+  2194                           ;main.c: 601:   SYSTEM_Initialize();
   2195     0340  3184  2402  3183   	fcall	_SYSTEM_Initialize
   2196                           
-  2197                           ;main.c: 599:   TMR0_SetInterruptHandler(TMR0_EvenHandler);
+  2197                           ;main.c: 602:   TMR0_SetInterruptHandler(TMR0_EvenHandler);
   2198     0343  305A               	movlw	low _TMR0_EvenHandler
   2199     0344  0020               	movlb	0	; select bank0
   2200     0345  00C4               	movwf	TMR0_SetInterruptHandler@InterruptHandler
@@ -2217,27 +2217,27 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2203     0348  3184  24C9  3183   	fcall	_TMR0_SetInterruptHandler
   2204     034B                     l2406:
   2205                           
-  2206                           ;main.c: 605:   (INTCONbits.GIE = 1);
+  2206                           ;main.c: 608:   (INTCONbits.GIE = 1);
   2207     034B  178B               	bsf	11,7	;volatile
   2208     034C                     l2408:
   2209                           
-  2210                           ;main.c: 608:   (INTCONbits.PEIE = 1);
+  2210                           ;main.c: 611:   (INTCONbits.PEIE = 1);
   2211     034C  170B               	bsf	11,6	;volatile
   2212     034D                     l2410:
   2213                           
-  2214                           ;main.c: 617:     getFrameData();
+  2214                           ;main.c: 620:     getFrameData();
   2215     034D  3182  228F  3183   	fcall	_getFrameData
   2216     0350                     l2412:
   2217                           
-  2218                           ;main.c: 618:     check_input();
+  2218                           ;main.c: 621:     check_input();
   2219     0350  3183  2377  3183   	fcall	_check_input
   2220     0353                     l2414:
   2221                           
-  2222                           ;main.c: 620:     Exception_handling();
+  2222                           ;main.c: 623:     Exception_handling();
   2223     0353  3183  23A8  3183   	fcall	_Exception_handling
   2224     0356                     l2416:
   2225                           
-  2226                           ;main.c: 621:     if (fException2 == 0) {
+  2226                           ;main.c: 624:     if (fException2 == 0) {
   2227     0356  0020               	movlb	0	; select bank0
   2228     0357  083C               	movf	_fException2,w
   2229     0358  1D03               	btfss	3,2
@@ -2248,7 +2248,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2234     035C                     u2910:
   2235     035C                     l2418:
   2236                           
-  2237                           ;main.c: 622:       if (fException == 1) {
+  2237                           ;main.c: 625:       if (fException == 1) {
   2238     035C  033D               	decf	_fException,w
   2239     035D  1D03               	btfss	3,2
   2240     035E  2B60               	goto	u2921
@@ -2258,19 +2258,19 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2244     0361                     u2920:
   2245     0361                     l2420:
   2246                           
-  2247                           ;main.c: 624:         fException = 0;
+  2247                           ;main.c: 627:         fException = 0;
   2248     0361  01BD               	clrf	_fException
   2249                           
-  2250                           ;main.c: 625:       } else
+  2250                           ;main.c: 628:       } else
   2251     0362  2B4D               	goto	l2410
   2252     0363                     l2422:
   2253                           
-  2254                           ;main.c: 626:         LED_output();
+  2254                           ;main.c: 629:         LED_output();
   2255     0363  3180  2046  3183   	fcall	_LED_output
   2256     0366  2B4D               	goto	l2410
   2257     0367                     l2424:
   2258                           
-  2259                           ;main.c: 629:       fException2 = 0;
+  2259                           ;main.c: 632:       fException2 = 0;
   2260     0367  01BC               	clrf	_fException2
   2261     0368                     l2426:
   2262     0368  0022               	movlb	2	; select bank2
@@ -2281,7 +2281,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2267     036B  148E               	bsf	14,1	;volatile
   2268     036C                     l2432:
   2269                           
-  2270                           ;main.c: 633:       EPWM1_LoadDutyValue((50));
+  2270                           ;main.c: 636:       EPWM1_LoadDutyValue((50));
   2271     036C  3032               	movlw	50
   2272     036D  0020               	movlb	0	; select bank0
   2273     036E  00C4               	movwf	EPWM1_LoadDutyValue@dutyValue
@@ -2296,7 +2296,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2282     028F                     __ptext1:	
   2283 ;; *************** function _getFrameData *****************
   2284 ;; Defined at:
-  2285 ;;		line 445 in file "main.c"
+  2285 ;;		line 448 in file "main.c"
   2286 ;; Parameters:    Size  Location     Type
   2287 ;;		None
   2288 ;; Auto vars:     Size  Location     Type
@@ -2332,7 +2332,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2318                           ; Regs used in _getFrameData: [wreg-fsr0h+status,2+status,0]
   2319                           
   2320                           
-  2321                           ;main.c: 446:   if (data_1byte_OK == 1) {
+  2321                           ;main.c: 449:   if (data_1byte_OK == 1) {
   2322     028F  0020               	movlb	0	; select bank0
   2323     0290  0343               	decf	_data_1byte_OK,w	;volatile
   2324     0291  1D03               	btfss	3,2
@@ -2343,14 +2343,14 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2329     0295                     u2880:
   2330     0295                     l2360:
   2331                           
-  2332                           ;main.c: 447:     data_1byte_OK = 0;
+  2332                           ;main.c: 450:     data_1byte_OK = 0;
   2333     0295  01C3               	clrf	_data_1byte_OK	;volatile
   2334                           
-  2335                           ;main.c: 450:     switch (step) {
+  2335                           ;main.c: 453:     switch (step) {
   2336     0296  2ADC               	goto	l2402
   2337     0297                     l2362:
   2338                           
-  2339                           ;main.c: 452:       if (rx_data == 0xC8) {
+  2339                           ;main.c: 455:       if (rx_data == 0xC8) {
   2340     0297  30C8               	movlw	200
   2341     0298  0674               	xorwf	_rx_data,w
   2342     0299  1D03               	btfss	3,2
@@ -2361,25 +2361,25 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2347     029D                     u2890:
   2348     029D                     l2364:
   2349                           
-  2350                           ;main.c: 453:         step = 1;
+  2350                           ;main.c: 456:         step = 1;
   2351     029D  01C1               	clrf	_step
   2352     029E  0AC1               	incf	_step,f
   2353     029F                     l2366:
   2354                           
-  2355                           ;main.c: 454:         data_buf[0] = rx_data;
+  2355                           ;main.c: 457:         data_buf[0] = rx_data;
   2356     029F  0874               	movf	_rx_data,w
   2357     02A0  00A0               	movwf	_data_buf
   2358                           
-  2359                           ;main.c: 455:       } else {
+  2359                           ;main.c: 458:       } else {
   2360     02A1  2AFF               	goto	l449
   2361     02A2                     l2368:
   2362                           
-  2363                           ;main.c: 456:         step = 0;
+  2363                           ;main.c: 459:         step = 0;
   2364     02A2  01C1               	clrf	_step
   2365     02A3  2AFF               	goto	l449
   2366     02A4                     l2370:
   2367                           
-  2368                           ;main.c: 460:       if (rx_data == 0x8B) {
+  2368                           ;main.c: 463:       if (rx_data == 0x8B) {
   2369     02A4  308B               	movlw	139
   2370     02A5  0674               	xorwf	_rx_data,w
   2371     02A6  1D03               	btfss	3,2
@@ -2390,120 +2390,120 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2376     02AA                     u2900:
   2377     02AA                     l2372:
   2378                           
-  2379                           ;main.c: 461:         data_buf[1] = rx_data;
+  2379                           ;main.c: 464:         data_buf[1] = rx_data;
   2380     02AA  0874               	movf	_rx_data,w
   2381     02AB  00A1               	movwf	_data_buf+1
   2382                           
-  2383                           ;main.c: 462:         step = 2;
+  2383                           ;main.c: 465:         step = 2;
   2384     02AC  3002               	movlw	2
   2385     02AD  00C1               	movwf	_step
   2386                           
-  2387                           ;main.c: 463:       } else {
+  2387                           ;main.c: 466:       } else {
   2388     02AE  2AFF               	goto	l449
   2389     02AF                     l2376:
   2390                           
-  2391                           ;main.c: 468:       data_buf[2] = rx_data;
+  2391                           ;main.c: 471:       data_buf[2] = rx_data;
   2392     02AF  0874               	movf	_rx_data,w
   2393     02B0  00A2               	movwf	_data_buf+2
   2394                           
-  2395                           ;main.c: 469:       step = 3;
+  2395                           ;main.c: 472:       step = 3;
   2396     02B1  3003               	movlw	3
   2397     02B2  00C1               	movwf	_step
   2398                           
-  2399                           ;main.c: 470:       break;
+  2399                           ;main.c: 473:       break;
   2400     02B3  2AFF               	goto	l449
   2401     02B4                     l2378:
   2402                           
-  2403                           ;main.c: 472:       data_buf[3] = rx_data;
+  2403                           ;main.c: 475:       data_buf[3] = rx_data;
   2404     02B4  0874               	movf	_rx_data,w
   2405     02B5  00A3               	movwf	_data_buf+3
   2406                           
-  2407                           ;main.c: 473:       step = 4;
+  2407                           ;main.c: 476:       step = 4;
   2408     02B6  3004               	movlw	4
   2409     02B7  00C1               	movwf	_step
   2410                           
-  2411                           ;main.c: 474:       break;
+  2411                           ;main.c: 477:       break;
   2412     02B8  2AFF               	goto	l449
   2413     02B9                     l2380:
   2414                           
-  2415                           ;main.c: 476:       data_buf[4] = rx_data;
+  2415                           ;main.c: 479:       data_buf[4] = rx_data;
   2416     02B9  0874               	movf	_rx_data,w
   2417     02BA  00A4               	movwf	_data_buf+4
   2418                           
-  2419                           ;main.c: 477:       step = 5;
+  2419                           ;main.c: 480:       step = 5;
   2420     02BB  3005               	movlw	5
   2421     02BC  00C1               	movwf	_step
   2422                           
-  2423                           ;main.c: 478:       break;
+  2423                           ;main.c: 481:       break;
   2424     02BD  2AFF               	goto	l449
   2425     02BE                     l2382:
   2426                           
-  2427                           ;main.c: 480:       data_buf[5] = rx_data;
+  2427                           ;main.c: 483:       data_buf[5] = rx_data;
   2428     02BE  0874               	movf	_rx_data,w
   2429     02BF  00A5               	movwf	_data_buf+5
   2430                           
-  2431                           ;main.c: 481:       step = 6;
+  2431                           ;main.c: 484:       step = 6;
   2432     02C0  3006               	movlw	6
   2433     02C1  00C1               	movwf	_step
   2434                           
-  2435                           ;main.c: 482:       break;
+  2435                           ;main.c: 485:       break;
   2436     02C2  2AFF               	goto	l449
   2437     02C3                     l2384:
   2438                           
-  2439                           ;main.c: 484:       data_buf[6] = rx_data;
+  2439                           ;main.c: 487:       data_buf[6] = rx_data;
   2440     02C3  0874               	movf	_rx_data,w
   2441     02C4  00A6               	movwf	_data_buf+6
   2442                           
-  2443                           ;main.c: 485:       step = 7;
+  2443                           ;main.c: 488:       step = 7;
   2444     02C5  3007               	movlw	7
   2445     02C6  00C1               	movwf	_step
   2446                           
-  2447                           ;main.c: 486:       break;
+  2447                           ;main.c: 489:       break;
   2448     02C7  2AFF               	goto	l449
   2449     02C8                     l2386:
   2450                           
-  2451                           ;main.c: 488:       data_buf[7] = rx_data;
+  2451                           ;main.c: 491:       data_buf[7] = rx_data;
   2452     02C8  0874               	movf	_rx_data,w
   2453     02C9  00A7               	movwf	_data_buf+7
   2454                           
-  2455                           ;main.c: 489:       step = 8;
+  2455                           ;main.c: 492:       step = 8;
   2456     02CA  3008               	movlw	8
   2457     02CB  00C1               	movwf	_step
   2458                           
-  2459                           ;main.c: 490:       break;
+  2459                           ;main.c: 493:       break;
   2460     02CC  2AFF               	goto	l449
   2461     02CD                     l2388:
   2462                           
-  2463                           ;main.c: 492:       data_buf[8] = rx_data;
+  2463                           ;main.c: 495:       data_buf[8] = rx_data;
   2464     02CD  0874               	movf	_rx_data,w
   2465     02CE  00A8               	movwf	_data_buf+8
   2466                           
-  2467                           ;main.c: 493:       step = 9;
+  2467                           ;main.c: 496:       step = 9;
   2468     02CF  3009               	movlw	9
   2469     02D0  00C1               	movwf	_step
   2470                           
-  2471                           ;main.c: 494:       break;
+  2471                           ;main.c: 497:       break;
   2472     02D1  2AFF               	goto	l449
   2473     02D2                     l2390:
   2474                           
-  2475                           ;main.c: 496:       data_buf[9] = rx_data;
+  2475                           ;main.c: 499:       data_buf[9] = rx_data;
   2476     02D2  0874               	movf	_rx_data,w
   2477     02D3  00A9               	movwf	_data_buf+9
   2478                           
-  2479                           ;main.c: 497:       step = 10;
+  2479                           ;main.c: 500:       step = 10;
   2480     02D4  300A               	movlw	10
   2481     02D5  00C1               	movwf	_step
   2482                           
-  2483                           ;main.c: 498:       break;
+  2483                           ;main.c: 501:       break;
   2484     02D6  2AFF               	goto	l449
   2485     02D7                     l2392:
   2486                           
-  2487                           ;main.c: 500:       data_buf[10] = rx_data;
+  2487                           ;main.c: 503:       data_buf[10] = rx_data;
   2488     02D7  0874               	movf	_rx_data,w
   2489     02D8  00AA               	movwf	_data_buf+10
   2490     02D9                     l2394:
   2491                           
-  2492                           ;main.c: 501:       fFrame_OK = 1;
+  2492                           ;main.c: 504:       fFrame_OK = 1;
   2493     02D9  01C2               	clrf	_fFrame_OK
   2494     02DA  0AC2               	incf	_fFrame_OK,f
   2495     02DB  2AA2               	goto	l2368
@@ -2560,7 +2560,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2546     0377                     __ptext2:	
   2547 ;; *************** function _check_input *****************
   2548 ;; Defined at:
-  2549 ;;		line 403 in file "main.c"
+  2549 ;;		line 406 in file "main.c"
   2550 ;; Parameters:    Size  Location     Type
   2551 ;;		None
   2552 ;; Auto vars:     Size  Location     Type
@@ -2596,21 +2596,21 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2582                           ; Regs used in _check_input: [wreg+status,2]
   2583                           
   2584                           
-  2585                           ;main.c: 404:   D2.Byte = data_buf[2];
+  2585                           ;main.c: 407:   D2.Byte = data_buf[2];
   2586     0377  0020               	movlb	0	; select bank0
   2587     0378  0822               	movf	_data_buf+2,w
   2588     0379  00F3               	movwf	_D2
   2589                           
-  2590                           ;main.c: 405:   D3.Byte = data_buf[3];
+  2590                           ;main.c: 408:   D3.Byte = data_buf[3];
   2591     037A  0823               	movf	_data_buf+3,w
   2592     037B  00C0               	movwf	_D3
   2593     037C                     l2342:
   2594                           
-  2595                           ;main.c: 406:   csFlag.Byte = 0;
+  2595                           ;main.c: 409:   csFlag.Byte = 0;
   2596     037C  01BF               	clrf	_csFlag
   2597     037D                     l2344:
   2598                           
-  2599                           ;main.c: 409:   if (D2.RunLight == 1)
+  2599                           ;main.c: 412:   if (D2.RunLight == 1)
   2600     037D  1D73               	btfss	_D2,2
   2601     037E  2B80               	goto	u2821
   2602     037F  2B81               	goto	u2820
@@ -2619,18 +2619,18 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2605     0381                     u2820:
   2606     0381                     l2346:
   2607                           
-  2608                           ;main.c: 410:     csFlag.RunLight = 1;
+  2608                           ;main.c: 413:     csFlag.RunLight = 1;
   2609     0381  16BF               	bsf	_csFlag,5
   2610     0382  2B84               	goto	l416
   2611     0383                     l415:	
-  2612                           ;main.c: 411:   else
+  2612                           ;main.c: 414:   else
   2613                           
   2614                           
-  2615                           ;main.c: 412:     csFlag.RunLight = 0;
+  2615                           ;main.c: 415:     csFlag.RunLight = 0;
   2616     0383  12BF               	bcf	_csFlag,5
   2617     0384                     l416:
   2618                           
-  2619                           ;main.c: 415:   if (D2.DRL == 1)
+  2619                           ;main.c: 418:   if (D2.DRL == 1)
   2620     0384  1DF3               	btfss	_D2,3
   2621     0385  2B87               	goto	u2831
   2622     0386  2B88               	goto	u2830
@@ -2639,18 +2639,18 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2625     0388                     u2830:
   2626     0388                     l2348:
   2627                           
-  2628                           ;main.c: 416:     csFlag.DRL = 1;
+  2628                           ;main.c: 419:     csFlag.DRL = 1;
   2629     0388  163F               	bsf	_csFlag,4
   2630     0389  2B8B               	goto	l418
   2631     038A                     l417:	
-  2632                           ;main.c: 417:   else
+  2632                           ;main.c: 420:   else
   2633                           
   2634                           
-  2635                           ;main.c: 418:     csFlag.DRL = 0;
+  2635                           ;main.c: 421:     csFlag.DRL = 0;
   2636     038A  123F               	bcf	_csFlag,4
   2637     038B                     l418:
   2638                           
-  2639                           ;main.c: 421:   if (D2.LoBeam == 1)
+  2639                           ;main.c: 424:   if (D2.LoBeam == 1)
   2640     038B  1E73               	btfss	_D2,4
   2641     038C  2B8E               	goto	u2841
   2642     038D  2B8F               	goto	u2840
@@ -2659,18 +2659,18 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2645     038F                     u2840:
   2646     038F                     l2350:
   2647                           
-  2648                           ;main.c: 422:     csFlag.LoBeam = 1;
+  2648                           ;main.c: 425:     csFlag.LoBeam = 1;
   2649     038F  15BF               	bsf	_csFlag,3
   2650     0390  2B92               	goto	l420
   2651     0391                     l419:	
-  2652                           ;main.c: 423:   else
+  2652                           ;main.c: 426:   else
   2653                           
   2654                           
-  2655                           ;main.c: 424:     csFlag.LoBeam = 0;
+  2655                           ;main.c: 427:     csFlag.LoBeam = 0;
   2656     0391  11BF               	bcf	_csFlag,3
   2657     0392                     l420:
   2658                           
-  2659                           ;main.c: 427:   if (D2.HiBeam == 1)
+  2659                           ;main.c: 430:   if (D2.HiBeam == 1)
   2660     0392  1EF3               	btfss	_D2,5
   2661     0393  2B95               	goto	u2851
   2662     0394  2B96               	goto	u2850
@@ -2679,18 +2679,18 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2665     0396                     u2850:
   2666     0396                     l2352:
   2667                           
-  2668                           ;main.c: 428:     csFlag.HiBeam = 1;
+  2668                           ;main.c: 431:     csFlag.HiBeam = 1;
   2669     0396  153F               	bsf	_csFlag,2
   2670     0397  2B99               	goto	l422
   2671     0398                     l421:	
-  2672                           ;main.c: 429:   else
+  2672                           ;main.c: 432:   else
   2673                           
   2674                           
-  2675                           ;main.c: 430:     csFlag.HiBeam = 0;
+  2675                           ;main.c: 433:     csFlag.HiBeam = 0;
   2676     0398  113F               	bcf	_csFlag,2
   2677     0399                     l422:
   2678                           
-  2679                           ;main.c: 433:   if (D3.turnLight_L == 1)
+  2679                           ;main.c: 436:   if (D3.turnLight_L == 1)
   2680     0399  1EC0               	btfss	_D3,5
   2681     039A  2B9C               	goto	u2861
   2682     039B  2B9D               	goto	u2860
@@ -2699,18 +2699,18 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2685     039D                     u2860:
   2686     039D                     l2354:
   2687                           
-  2688                           ;main.c: 434:     csFlag.turnLight_L = 1;
+  2688                           ;main.c: 437:     csFlag.turnLight_L = 1;
   2689     039D  14BF               	bsf	_csFlag,1
   2690     039E  2BA0               	goto	l424
   2691     039F                     l423:	
-  2692                           ;main.c: 435:   else
+  2692                           ;main.c: 438:   else
   2693                           
   2694                           
-  2695                           ;main.c: 436:     csFlag.turnLight_L = 0;
+  2695                           ;main.c: 439:     csFlag.turnLight_L = 0;
   2696     039F  10BF               	bcf	_csFlag,1
   2697     03A0                     l424:
   2698                           
-  2699                           ;main.c: 439:   if (D3.turnLight_R == 1)
+  2699                           ;main.c: 442:   if (D3.turnLight_R == 1)
   2700     03A0  1F40               	btfss	_D3,6
   2701     03A1  2BA3               	goto	u2871
   2702     03A2  2BA4               	goto	u2870
@@ -2719,14 +2719,14 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   2705     03A4                     u2870:
   2706     03A4                     l2356:
   2707                           
-  2708                           ;main.c: 440:     csFlag.turnLight_R = 1;
+  2708                           ;main.c: 443:     csFlag.turnLight_R = 1;
   2709     03A4  143F               	bsf	_csFlag,0
   2710     03A5  2BA7               	goto	l427
   2711     03A6                     l425:	
-  2712                           ;main.c: 441:   else
+  2712                           ;main.c: 444:   else
   2713                           
   2714                           
-  2715                           ;main.c: 442:     csFlag.turnLight_R = 0;
+  2715                           ;main.c: 445:     csFlag.turnLight_R = 0;
   2716     03A6  103F               	bcf	_csFlag,0
   2717     03A7                     l427:
   2718     03A7  0008               	return
@@ -3439,7 +3439,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3423     0046                     __ptext13:	
   3424 ;; *************** function _LED_output *****************
   3425 ;; Defined at:
-  3426 ;;		line 264 in file "main.c"
+  3426 ;;		line 267 in file "main.c"
   3427 ;; Parameters:    Size  Location     Type
   3428 ;;		None
   3429 ;; Auto vars:     Size  Location     Type
@@ -3477,7 +3477,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3461                           ; Regs used in _LED_output: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
   3462                           
   3463                           
-  3464                           ;main.c: 265:   uint8_t crc8 = CS[csFlag.Byte];
+  3464                           ;main.c: 268:   uint8_t crc8 = CS[csFlag.Byte];
   3465     0046  0020               	movlb	0	; select bank0
   3466     0047  083F               	movf	_csFlag,w
   3467     0048  3EA0               	addlw	(low (_CS| 0))& (0+255)
@@ -3487,7 +3487,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3471     004C  00CB               	movwf	LED_output@crc8
   3472     004D                     l2192:
   3473                           
-  3474                           ;main.c: 267:   if (data_buf[10] != crc8)
+  3474                           ;main.c: 270:   if (data_buf[10] != crc8)
   3475     004D  082A               	movf	_data_buf+10,w
   3476     004E  064B               	xorwf	LED_output@crc8,w
   3477     004F  1903               	skipnz
@@ -3499,11 +3499,11 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3483     0053  29C2               	goto	l309
   3484     0054                     l2196:
   3485                           
-  3486                           ;main.c: 275:   T10MS_CNT = 0;
+  3486                           ;main.c: 278:   T10MS_CNT = 0;
   3487     0054  01BE               	clrf	_T10MS_CNT	;volatile
   3488     0055                     l2198:
   3489                           
-  3490                           ;main.c: 278:   if (csFlag.RunLight == 1) {
+  3490                           ;main.c: 281:   if (csFlag.RunLight == 1) {
   3491     0055  1EBF               	btfss	_csFlag,5
   3492     0056  2858               	goto	u2161
   3493     0057  2859               	goto	u2160
@@ -3511,21 +3511,21 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3495     0058  285C               	goto	l314
   3496     0059                     u2160:
   3497     0059                     l311:	
-  3498                           ;main.c: 279:     do { LATAbits.LATA3 = 1; } while(0);
+  3498                           ;main.c: 282:     do { LATAbits.LATA3 = 1; } while(0);
   3499                           
   3500     0059  0022               	movlb	2	; select bank2
   3501     005A  158C               	bsf	12,3	;volatile
   3502     005B  285E               	goto	l313
   3503     005C                     l314:	
-  3504                           ;main.c: 281:     do { LATAbits.LATA3 = 0; } while(0);
+  3504                           ;main.c: 284:     do { LATAbits.LATA3 = 0; } while(0);
   3505                           
   3506     005C  0022               	movlb	2	; select bank2
   3507     005D  118C               	bcf	12,3	;volatile
   3508     005E                     l313:	
-  3509                           ;main.c: 282:   }
+  3509                           ;main.c: 285:   }
   3510                           
   3511                           
-  3512                           ;main.c: 284:   if (csFlag.RunLight == 0 && csFlag.LoBeam == 0 && csFlag.HiBeam == 0 &&
+  3512                           ;main.c: 287:   if (csFlag.RunLight == 0 && csFlag.LoBeam == 0 && csFlag.HiBeam == 0 &&
   3513     005E  0020               	movlb	0	; select bank0
   3514     005F  1ABF               	btfsc	_csFlag,5
   3515     0060  2862               	goto	u2171
@@ -3555,25 +3555,25 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3539     006E  287A               	goto	l316
   3540     006F                     u2200:
   3541     006F                     l317:	
-  3542                           ;main.c: 285:       csFlag.DRL == 0) {;main.c: 287:     do { LATCbits.LATC1 = 0; } while
+  3542                           ;main.c: 288:       csFlag.DRL == 0) {;main.c: 290:     do { LATCbits.LATC1 = 0; } while
       +                          (0);
   3543                           
   3544     006F  0022               	movlb	2	; select bank2
   3545     0070  108E               	bcf	14,1	;volatile
   3546     0071                     l319:	
-  3547                           ;main.c: 288:     do { LATAbits.LATA0 = 0; } while(0);
+  3547                           ;main.c: 291:     do { LATAbits.LATA0 = 0; } while(0);
   3548                           
   3549     0071  100C               	bcf	12,0	;volatile
   3550     0072                     l2206:
   3551                           
-  3552                           ;main.c: 289:     EPWM1_LoadDutyValue((0));
+  3552                           ;main.c: 292:     EPWM1_LoadDutyValue((0));
   3553     0072  3000               	movlw	0
   3554     0073  0020               	movlb	0	; select bank0
   3555     0074  00C4               	movwf	EPWM1_LoadDutyValue@dutyValue
   3556     0075  00C5               	movwf	EPWM1_LoadDutyValue@dutyValue+1
   3557     0076  3183  23E6  3180   	fcall	_EPWM1_LoadDutyValue
   3558                           
-  3559                           ;main.c: 290:   } else if (csFlag.RunLight == 0 && csFlag.LoBeam == 0 && csFlag.HiBeam =
+  3559                           ;main.c: 293:   } else if (csFlag.RunLight == 0 && csFlag.LoBeam == 0 && csFlag.HiBeam =
       +                          = 0 &&
   3560     0079  29B1               	goto	l2328
   3561     007A                     l316:
@@ -3605,21 +3605,21 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3587     0089  2891               	goto	l322
   3588     008A                     u2240:
   3589     008A                     l323:	
-  3590                           ;main.c: 291:              csFlag.DRL == 1) {;main.c: 293:     do { LATCbits.LATC1 = 0; 
+  3590                           ;main.c: 294:              csFlag.DRL == 1) {;main.c: 296:     do { LATCbits.LATC1 = 0; 
       +                          } while(0);
   3591                           
   3592     008A  0022               	movlb	2	; select bank2
   3593     008B  108E               	bcf	14,1	;volatile
   3594     008C                     l325:	
-  3595                           ;main.c: 294:     do { LATAbits.LATA0 = 0; } while(0);
+  3595                           ;main.c: 297:     do { LATAbits.LATA0 = 0; } while(0);
   3596                           
   3597     008C  100C               	bcf	12,0	;volatile
   3598     008D                     l2214:
   3599                           
-  3600                           ;main.c: 295:     DRL_ON();
+  3600                           ;main.c: 298:     DRL_ON();
   3601     008D  3184  2447  3180   	fcall	_DRL_ON
   3602                           
-  3603                           ;main.c: 296:   } else if (csFlag.RunLight == 0 && csFlag.LoBeam == 0 && csFlag.HiBeam =
+  3603                           ;main.c: 299:   } else if (csFlag.RunLight == 0 && csFlag.LoBeam == 0 && csFlag.HiBeam =
       +                          = 1 &&
   3604     0090  29B1               	goto	l2328
   3605     0091                     l322:
@@ -3651,13 +3651,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3631     00A0  28A5               	goto	l328
   3632     00A1                     u2280:
   3633     00A1                     l329:	
-  3634                           ;main.c: 297:              csFlag.DRL == 0) {;main.c: 299:     do { LATCbits.LATC1 = 0; 
+  3634                           ;main.c: 300:              csFlag.DRL == 0) {;main.c: 302:     do { LATCbits.LATC1 = 0; 
       +                          } while(0);
   3635                           
   3636     00A1  0022               	movlb	2	; select bank2
   3637     00A2  108E               	bcf	14,1	;volatile
   3638     00A3                     l331:	
-  3639                           ;main.c: 300:     do { LATAbits.LATA0 = 1; } while(0);
+  3639                           ;main.c: 303:     do { LATAbits.LATA0 = 1; } while(0);
   3640                           
   3641     00A3  140C               	bsf	12,0	;volatile
   3642     00A4  2872               	goto	l2206
@@ -3690,13 +3690,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3669     00B4  28B9               	goto	l334
   3670     00B5                     u2320:
   3671     00B5                     l335:	
-  3672                           ;main.c: 303:              csFlag.DRL == 1) {;main.c: 305:     do { LATCbits.LATC1 = 0; 
+  3672                           ;main.c: 306:              csFlag.DRL == 1) {;main.c: 308:     do { LATCbits.LATC1 = 0; 
       +                          } while(0);
   3673                           
   3674     00B5  0022               	movlb	2	; select bank2
   3675     00B6  108E               	bcf	14,1	;volatile
   3676     00B7                     l337:	
-  3677                           ;main.c: 306:     do { LATAbits.LATA0 = 0; } while(0);
+  3677                           ;main.c: 309:     do { LATAbits.LATA0 = 0; } while(0);
   3678                           
   3679     00B7  100C               	bcf	12,0	;volatile
   3680     00B8  288D               	goto	l2214
@@ -3729,13 +3729,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3707     00C8  28CD               	goto	l340
   3708     00C9                     u2360:
   3709     00C9                     l341:	
-  3710                           ;main.c: 309:              csFlag.DRL == 0) {;main.c: 311:     do { LATCbits.LATC1 = 1; 
+  3710                           ;main.c: 312:              csFlag.DRL == 0) {;main.c: 314:     do { LATCbits.LATC1 = 1; 
       +                          } while(0);
   3711                           
   3712     00C9  0022               	movlb	2	; select bank2
   3713     00CA  148E               	bsf	14,1	;volatile
   3714     00CB                     l343:	
-  3715                           ;main.c: 312:     do { LATAbits.LATA0 = 0; } while(0);
+  3715                           ;main.c: 315:     do { LATAbits.LATA0 = 0; } while(0);
   3716                           
   3717     00CB  100C               	bcf	12,0	;volatile
   3718     00CC  2872               	goto	l2206
@@ -3768,13 +3768,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3745     00DC  28E1               	goto	l346
   3746     00DD                     u2400:
   3747     00DD                     l347:	
-  3748                           ;main.c: 315:              csFlag.DRL == 1) {;main.c: 317:     do { LATCbits.LATC1 = 1; 
+  3748                           ;main.c: 318:              csFlag.DRL == 1) {;main.c: 320:     do { LATCbits.LATC1 = 1; 
       +                          } while(0);
   3749                           
   3750     00DD  0022               	movlb	2	; select bank2
   3751     00DE  148E               	bsf	14,1	;volatile
   3752     00DF                     l349:	
-  3753                           ;main.c: 318:     do { LATAbits.LATA0 = 0; } while(0);
+  3753                           ;main.c: 321:     do { LATAbits.LATA0 = 0; } while(0);
   3754                           
   3755     00DF  100C               	bcf	12,0	;volatile
   3756     00E0  2872               	goto	l2206
@@ -3807,13 +3807,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3783     00F0  28F5               	goto	l352
   3784     00F1                     u2440:
   3785     00F1                     l353:	
-  3786                           ;main.c: 322:              csFlag.DRL == 0) {;main.c: 324:     do { LATCbits.LATC1 = 1; 
+  3786                           ;main.c: 325:              csFlag.DRL == 0) {;main.c: 327:     do { LATCbits.LATC1 = 1; 
       +                          } while(0);
   3787                           
   3788     00F1  0022               	movlb	2	; select bank2
   3789     00F2  148E               	bsf	14,1	;volatile
   3790     00F3                     l355:	
-  3791                           ;main.c: 325:     do { LATAbits.LATA0 = 1; } while(0);
+  3791                           ;main.c: 328:     do { LATAbits.LATA0 = 1; } while(0);
   3792                           
   3793     00F3  140C               	bsf	12,0	;volatile
   3794     00F4  2872               	goto	l2206
@@ -3846,13 +3846,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3821     0104  2909               	goto	l358
   3822     0105                     u2480:
   3823     0105                     l359:	
-  3824                           ;main.c: 328:              csFlag.DRL == 1) {;main.c: 330:     do { LATCbits.LATC1 = 1; 
+  3824                           ;main.c: 331:              csFlag.DRL == 1) {;main.c: 333:     do { LATCbits.LATC1 = 1; 
       +                          } while(0);
   3825                           
   3826     0105  0022               	movlb	2	; select bank2
   3827     0106  148E               	bsf	14,1	;volatile
   3828     0107                     l361:	
-  3829                           ;main.c: 331:     do { LATAbits.LATA0 = 1; } while(0);
+  3829                           ;main.c: 334:     do { LATAbits.LATA0 = 1; } while(0);
   3830                           
   3831     0107  140C               	bsf	12,0	;volatile
   3832     0108  2872               	goto	l2206
@@ -3885,18 +3885,18 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3859     0118  2925               	goto	l364
   3860     0119                     u2520:
   3861     0119                     l365:	
-  3862                           ;main.c: 335:              csFlag.DRL == 0) {;main.c: 337:     do { LATCbits.LATC1 = 0; 
+  3862                           ;main.c: 338:              csFlag.DRL == 0) {;main.c: 340:     do { LATCbits.LATC1 = 0; 
       +                          } while(0);
   3863                           
   3864     0119  0022               	movlb	2	; select bank2
   3865     011A  108E               	bcf	14,1	;volatile
   3866     011B                     l367:	
-  3867                           ;main.c: 338:     do { LATAbits.LATA0 = 0; } while(0);
+  3867                           ;main.c: 341:     do { LATAbits.LATA0 = 0; } while(0);
   3868                           
   3869     011B  100C               	bcf	12,0	;volatile
   3870     011C                     l2270:
   3871                           
-  3872                           ;main.c: 339:     EPWM1_LoadDutyValue((50));
+  3872                           ;main.c: 342:     EPWM1_LoadDutyValue((50));
   3873     011C  3032               	movlw	50
   3874     011D  0020               	movlb	0	; select bank0
   3875     011E  00C4               	movwf	EPWM1_LoadDutyValue@dutyValue
@@ -3904,7 +3904,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3877     0120  00C5               	movwf	EPWM1_LoadDutyValue@dutyValue+1
   3878     0121  3183  23E6  3180   	fcall	_EPWM1_LoadDutyValue
   3879                           
-  3880                           ;main.c: 340:   } else if (csFlag.RunLight == 1 && csFlag.LoBeam == 0 && csFlag.HiBeam =
+  3880                           ;main.c: 343:   } else if (csFlag.RunLight == 1 && csFlag.LoBeam == 0 && csFlag.HiBeam =
       +                          = 0 &&
   3881     0124  29B1               	goto	l2328
   3882     0125                     l364:
@@ -3936,13 +3936,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3908     0134  2939               	goto	l370
   3909     0135                     u2560:
   3910     0135                     l371:	
-  3911                           ;main.c: 341:              csFlag.DRL == 1) {;main.c: 343:     do { LATCbits.LATC1 = 0; 
+  3911                           ;main.c: 344:              csFlag.DRL == 1) {;main.c: 346:     do { LATCbits.LATC1 = 0; 
       +                          } while(0);
   3912                           
   3913     0135  0022               	movlb	2	; select bank2
   3914     0136  108E               	bcf	14,1	;volatile
   3915     0137                     l373:	
-  3916                           ;main.c: 344:     do { LATAbits.LATA0 = 0; } while(0);
+  3916                           ;main.c: 347:     do { LATAbits.LATA0 = 0; } while(0);
   3917                           
   3918     0137  100C               	bcf	12,0	;volatile
   3919     0138  288D               	goto	l2214
@@ -3975,13 +3975,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3946     0148  294D               	goto	l376
   3947     0149                     u2600:
   3948     0149                     l377:	
-  3949                           ;main.c: 347:              csFlag.DRL == 0) {;main.c: 349:     do { LATCbits.LATC1 = 0; 
+  3949                           ;main.c: 350:              csFlag.DRL == 0) {;main.c: 352:     do { LATCbits.LATC1 = 0; 
       +                          } while(0);
   3950                           
   3951     0149  0022               	movlb	2	; select bank2
   3952     014A  108E               	bcf	14,1	;volatile
   3953     014B                     l379:	
-  3954                           ;main.c: 350:     do { LATAbits.LATA0 = 0; } while(0);
+  3954                           ;main.c: 353:     do { LATAbits.LATA0 = 0; } while(0);
   3955                           
   3956     014B  100C               	bcf	12,0	;volatile
   3957     014C  291C               	goto	l2270
@@ -4014,16 +4014,16 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   3984     015C  2961               	goto	l382
   3985     015D                     u2640:
   3986     015D                     l383:	
-  3987                           ;main.c: 353:              csFlag.DRL == 1) {;main.c: 355:     do { LATCbits.LATC1 = 0; 
+  3987                           ;main.c: 356:              csFlag.DRL == 1) {;main.c: 358:     do { LATCbits.LATC1 = 0; 
       +                          } while(0);
   3988                           
   3989     015D  0022               	movlb	2	; select bank2
   3990     015E  108E               	bcf	14,1	;volatile
   3991     015F                     l385:	
-  3992                           ;main.c: 356:     do { LATAbits.LATA0 = 0; } while(0);
+  3992                           ;main.c: 359:     do { LATAbits.LATA0 = 0; } while(0);
   3993                           
   3994     015F  100C               	bcf	12,0	;volatile
-  3995     0160  288D               	goto	l2214
+  3995     0160  291C               	goto	l2270
   3996     0161                     l382:
   3997     0161  1EBF               	btfss	_csFlag,5
   3998     0162  2964               	goto	u2651
@@ -4053,13 +4053,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4022     0170  2975               	goto	l388
   4023     0171                     u2680:
   4024     0171                     l389:	
-  4025                           ;main.c: 359:              csFlag.DRL == 0) {;main.c: 361:     do { LATCbits.LATC1 = 1; 
+  4025                           ;main.c: 362:              csFlag.DRL == 0) {;main.c: 364:     do { LATCbits.LATC1 = 1; 
       +                          } while(0);
   4026                           
   4027     0171  0022               	movlb	2	; select bank2
   4028     0172  148E               	bsf	14,1	;volatile
   4029     0173                     l391:	
-  4030                           ;main.c: 362:     do { LATAbits.LATA0 = 0; } while(0);
+  4030                           ;main.c: 365:     do { LATAbits.LATA0 = 0; } while(0);
   4031                           
   4032     0173  100C               	bcf	12,0	;volatile
   4033     0174  291C               	goto	l2270
@@ -4092,13 +4092,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4060     0184  2989               	goto	l394
   4061     0185                     u2720:
   4062     0185                     l395:	
-  4063                           ;main.c: 365:              csFlag.DRL == 1) {;main.c: 367:     do { LATCbits.LATC1 = 1; 
+  4063                           ;main.c: 368:              csFlag.DRL == 1) {;main.c: 370:     do { LATCbits.LATC1 = 1; 
       +                          } while(0);
   4064                           
   4065     0185  0022               	movlb	2	; select bank2
   4066     0186  148E               	bsf	14,1	;volatile
   4067     0187                     l397:	
-  4068                           ;main.c: 368:     do { LATAbits.LATA0 = 0; } while(0);
+  4068                           ;main.c: 371:     do { LATAbits.LATA0 = 0; } while(0);
   4069                           
   4070     0187  100C               	bcf	12,0	;volatile
   4071     0188  291C               	goto	l2270
@@ -4131,13 +4131,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4098     0198  299D               	goto	l400
   4099     0199                     u2760:
   4100     0199                     l401:	
-  4101                           ;main.c: 371:              csFlag.DRL == 0) {;main.c: 373:     do { LATCbits.LATC1 = 1; 
+  4101                           ;main.c: 374:              csFlag.DRL == 0) {;main.c: 376:     do { LATCbits.LATC1 = 1; 
       +                          } while(0);
   4102                           
   4103     0199  0022               	movlb	2	; select bank2
   4104     019A  148E               	bsf	14,1	;volatile
   4105     019B                     l403:	
-  4106                           ;main.c: 374:     do { LATAbits.LATA0 = 1; } while(0);
+  4106                           ;main.c: 377:     do { LATAbits.LATA0 = 1; } while(0);
   4107                           
   4108     019B  140C               	bsf	12,0	;volatile
   4109     019C  291C               	goto	l2270
@@ -4170,25 +4170,25 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4136     01AC  29B1               	goto	l393
   4137     01AD                     u2800:
   4138     01AD                     l407:	
-  4139                           ;main.c: 377:              csFlag.DRL == 1) {;main.c: 379:     do { LATCbits.LATC1 = 1; 
+  4139                           ;main.c: 380:              csFlag.DRL == 1) {;main.c: 382:     do { LATCbits.LATC1 = 1; 
       +                          } while(0);
   4140                           
   4141     01AD  0022               	movlb	2	; select bank2
   4142     01AE  148E               	bsf	14,1	;volatile
   4143     01AF                     l409:	
-  4144                           ;main.c: 380:     do { LATAbits.LATA0 = 1; } while(0);
+  4144                           ;main.c: 383:     do { LATAbits.LATA0 = 1; } while(0);
   4145                           
   4146     01AF  140C               	bsf	12,0	;volatile
   4147     01B0  291C               	goto	l2270
   4148     01B1                     l393:
   4149     01B1                     l2328:
   4150                           
-  4151                           ;main.c: 384:   for (uint8_t i = 0; i < 11; i++) {
+  4151                           ;main.c: 387:   for (uint8_t i = 0; i < 11; i++) {
   4152     01B1  0020               	movlb	0	; select bank0
   4153     01B2  01CC               	clrf	LED_output@i
   4154     01B3                     l2334:
   4155                           
-  4156                           ;main.c: 385:     data_buf[i] = 0;
+  4156                           ;main.c: 388:     data_buf[i] = 0;
   4157     01B3  084C               	movf	LED_output@i,w
   4158     01B4  3E20               	addlw	(low (_data_buf| 0))& (0+255)
   4159     01B5  0086               	movwf	6
@@ -4196,7 +4196,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4161     01B7  0181               	clrf	1
   4162     01B8                     l2336:
   4163                           
-  4164                           ;main.c: 386:   }
+  4164                           ;main.c: 389:   }
   4165     01B8  3001               	movlw	1
   4166     01B9  00CA               	movwf	??_LED_output
   4167     01BA  084A               	movf	??_LED_output,w
@@ -4218,7 +4218,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4183     0447                     __ptext14:	
   4184 ;; *************** function _DRL_ON *****************
   4185 ;; Defined at:
-  4186 ;;		line 247 in file "main.c"
+  4186 ;;		line 250 in file "main.c"
   4187 ;; Parameters:    Size  Location     Type
   4188 ;;		None
   4189 ;; Auto vars:     Size  Location     Type
@@ -4254,7 +4254,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4219                           ; Regs used in _DRL_ON: [wreg+status,2+status,0+pclath+cstack]
   4220                           
   4221                           
-  4222                           ;main.c: 248:   uint16_t pwm_duty = (500);
+  4222                           ;main.c: 251:   uint16_t pwm_duty = (500);
   4223     0447  30F4               	movlw	244
   4224     0448  0020               	movlb	0	; select bank0
   4225     0449  00C8               	movwf	DRL_ON@pwm_duty
@@ -4262,7 +4262,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4227     044B  00C9               	movwf	DRL_ON@pwm_duty+1
   4228     044C                     l2172:
   4229                           
-  4230                           ;main.c: 252:   if (csFlag.turnLight_L == 1)
+  4230                           ;main.c: 255:   if (csFlag.turnLight_L == 1)
   4231     044C  1CBF               	btfss	_csFlag,1
   4232     044D  2C4F               	goto	u2121
   4233     044E  2C50               	goto	u2120
@@ -4271,12 +4271,12 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4236     0450                     u2120:
   4237     0450                     l2174:
   4238                           
-  4239                           ;main.c: 253:     pwm_duty = (0);
+  4239                           ;main.c: 256:     pwm_duty = (0);
   4240     0450  01C8               	clrf	DRL_ON@pwm_duty
   4241     0451  01C9               	clrf	DRL_ON@pwm_duty+1
   4242     0452                     l2176:
   4243                           
-  4244                           ;main.c: 261:   EPWM1_LoadDutyValue(pwm_duty);
+  4244                           ;main.c: 264:   EPWM1_LoadDutyValue(pwm_duty);
   4245     0452  0849               	movf	DRL_ON@pwm_duty+1,w
   4246     0453  00C5               	movwf	EPWM1_LoadDutyValue@dutyValue+1
   4247     0454  0848               	movf	DRL_ON@pwm_duty,w
@@ -4290,7 +4290,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4255     03A8                     __ptext15:	
   4256 ;; *************** function _Exception_handling *****************
   4257 ;; Defined at:
-  4258 ;;		line 233 in file "main.c"
+  4258 ;;		line 236 in file "main.c"
   4259 ;; Parameters:    Size  Location     Type
   4260 ;;		None
   4261 ;; Auto vars:     Size  Location     Type
@@ -4326,7 +4326,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4291                           ; Regs used in _Exception_handling: [wreg+status,2+status,0+pclath+cstack]
   4292                           
   4293                           
-  4294                           ;main.c: 234:   if ((data_buf[2] == 6) && (data_buf[10] == 0xD5)) {
+  4294                           ;main.c: 237:   if ((data_buf[2] == 6) && (data_buf[10] == 0xD5)) {
   4295     03A8  3006               	movlw	6
   4296     03A9  0020               	movlb	0	; select bank0
   4297     03AA  0622               	xorwf	_data_buf+2,w
@@ -4346,28 +4346,28 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4311     03B4  2BC8               	goto	l2188
   4312     03B5                     u2140:
   4313     03B5                     l294:	
-  4314                           ;main.c: 235:     do { LATAbits.LATA3 = 1; } while(0);
+  4314                           ;main.c: 238:     do { LATAbits.LATA3 = 1; } while(0);
   4315                           
   4316     03B5  0022               	movlb	2	; select bank2
   4317     03B6  158C               	bsf	12,3	;volatile
   4318     03B7                     l295:
   4319                           
-  4320                           ;main.c: 236:     fException = 1;
+  4320                           ;main.c: 239:     fException = 1;
   4321     03B7  0020               	movlb	0	; select bank0
   4322     03B8  01BD               	clrf	_fException
   4323     03B9  0ABD               	incf	_fException,f
   4324     03BA                     l296:	
-  4325                           ;main.c: 238:     do { LATCbits.LATC1 = 0; } while(0);
+  4325                           ;main.c: 241:     do { LATCbits.LATC1 = 0; } while(0);
   4326                           
   4327     03BA  0022               	movlb	2	; select bank2
   4328     03BB  108E               	bcf	14,1	;volatile
   4329     03BC                     l298:	
-  4330                           ;main.c: 239:     do { LATAbits.LATA0 = 0; } while(0);
+  4330                           ;main.c: 242:     do { LATAbits.LATA0 = 0; } while(0);
   4331                           
   4332     03BC  100C               	bcf	12,0	;volatile
   4333     03BD                     l2184:
   4334                           
-  4335                           ;main.c: 240:     EPWM1_LoadDutyValue((50));
+  4335                           ;main.c: 243:     EPWM1_LoadDutyValue((50));
   4336     03BD  3032               	movlw	50
   4337     03BE  0020               	movlb	0	; select bank0
   4338     03BF  00C4               	movwf	EPWM1_LoadDutyValue@dutyValue
@@ -4376,15 +4376,15 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4341     03C2  3183  23E6  3183   	fcall	_EPWM1_LoadDutyValue
   4342     03C5                     l2186:
   4343                           
-  4344                           ;main.c: 241:     T10MS_CNT = 0;
+  4344                           ;main.c: 244:     T10MS_CNT = 0;
   4345     03C5  0020               	movlb	0	; select bank0
   4346     03C6  01BE               	clrf	_T10MS_CNT	;volatile
   4347                           
-  4348                           ;main.c: 242:   } else {
+  4348                           ;main.c: 245:   } else {
   4349     03C7  2BC9               	goto	l301
   4350     03C8                     l2188:
   4351                           
-  4352                           ;main.c: 243:     fException = 0;
+  4352                           ;main.c: 246:     fException = 0;
   4353     03C8  01BD               	clrf	_fException
   4354     03C9                     l301:
   4355     03C9  0008               	return
@@ -4773,7 +4773,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4727     045A                     __ptext21:	
   4728 ;; *************** function _TMR0_EvenHandler *****************
   4729 ;; Defined at:
-  4730 ;;		line 585 in file "main.c"
+  4730 ;;		line 588 in file "main.c"
   4731 ;; Parameters:    Size  Location     Type
   4732 ;;		None
   4733 ;; Auto vars:     Size  Location     Type
@@ -4809,7 +4809,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4763                           ; Regs used in _TMR0_EvenHandler: [wreg+status,2+status,0]
   4764                           
   4765                           
-  4766                           ;main.c: 586:   T10MS_CNT++;
+  4766                           ;main.c: 589:   T10MS_CNT++;
   4767     045A  3001               	movlw	1
   4768     045B  00F6               	movwf	??_TMR0_EvenHandler
   4769     045C  0876               	movf	??_TMR0_EvenHandler,w
@@ -4817,7 +4817,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4771     045E  07BE               	addwf	_T10MS_CNT,f	;volatile
   4772     045F                     i1l1632:
   4773                           
-  4774                           ;main.c: 587:   if (T10MS_CNT >= 200) {
+  4774                           ;main.c: 590:   if (T10MS_CNT >= 200) {
   4775     045F  30C8               	movlw	200
   4776     0460  023E               	subwf	_T10MS_CNT,w	;volatile
   4777     0461  1C03               	skipc
@@ -4828,12 +4828,12 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4782     0465                     u107_20:
   4783     0465                     i1l1634:
   4784                           
-  4785                           ;main.c: 588:     fException2 = 1;
+  4785                           ;main.c: 591:     fException2 = 1;
   4786     0465  01BC               	clrf	_fException2
   4787     0466  0ABC               	incf	_fException2,f
   4788     0467                     i1l1636:
   4789                           
-  4790                           ;main.c: 589:     T10MS_CNT = 0;
+  4790                           ;main.c: 592:     T10MS_CNT = 0;
   4791     0467  01BE               	clrf	_T10MS_CNT	;volatile
   4792     0468                     i1l500:
   4793     0468  0008               	return
@@ -4909,7 +4909,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4862     01C3                     __ptext23:	
   4863 ;; *************** function _ECCP3_CallBack *****************
   4864 ;; Defined at:
-  4865 ;;		line 511 in file "main.c"
+  4865 ;;		line 514 in file "main.c"
   4866 ;; Parameters:    Size  Location     Type
   4867 ;;  capturedValu    2    0[COMMON] unsigned short 
   4868 ;; Auto vars:     Size  Location     Type
@@ -4944,12 +4944,12 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4897                           ; Regs used in _ECCP3_CallBack: [wreg+status,2+status,0]
   4898                           
   4899                           
-  4900                           ;main.c: 512:   static uint16_t pluse_width_LO = 0;;main.c: 513:   static uint16_t pluse
-      +                          _width_HI = 0;;main.c: 514:   static uint8_t HI_us = 0;;main.c: 515:   static uint8_t LO
-      +                          _us = 0;;main.c: 516:   static uint8_t diff_us = 0;;main.c: 517:   static uint16_t falli
-      +                          ng_edge_time = 0;;main.c: 518:   static uint16_t rising_edge_time = 0;;main.c: 519:   st
-      +                          atic _Bool rise_edge_flag = 0;;main.c: 520:   static _Bool fHead = 0;;main.c: 521:   sta
-      +                          tic uint8_t data_cnt = 0;;main.c: 524:   if (CCP3CON == 0x04) {
+  4900                           ;main.c: 515:   static uint16_t pluse_width_LO = 0;;main.c: 516:   static uint16_t pluse
+      +                          _width_HI = 0;;main.c: 517:   static uint8_t HI_us = 0;;main.c: 518:   static uint8_t LO
+      +                          _us = 0;;main.c: 519:   static uint8_t diff_us = 0;;main.c: 520:   static uint16_t falli
+      +                          ng_edge_time = 0;;main.c: 521:   static uint16_t rising_edge_time = 0;;main.c: 522:   st
+      +                          atic _Bool rise_edge_flag = 0;;main.c: 523:   static _Bool fHead = 0;;main.c: 524:   sta
+      +                          tic uint8_t data_cnt = 0;;main.c: 527:   if (CCP3CON == 0x04) {
   4901     01C3  3004               	movlw	4
   4902     01C4  0026               	movlb	6	; select bank6
   4903     01C5  0613               	xorwf	19,w	;volatile
@@ -4961,18 +4961,18 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4909     01CA                     u110_20:
   4910     01CA                     i1l1728:
   4911                           
-  4912                           ;main.c: 525:     falling_edge_time = capturedValue;
+  4912                           ;main.c: 528:     falling_edge_time = capturedValue;
   4913     01CA  0877               	movf	ECCP3_CallBack@capturedValue+1,w
   4914     01CB  00F1               	movwf	ECCP3_CallBack@falling_edge_time+1
   4915     01CC  0876               	movf	ECCP3_CallBack@capturedValue,w
   4916     01CD  00F0               	movwf	ECCP3_CallBack@falling_edge_time
   4917                           
-  4918                           ;main.c: 526:     CCP3CON = 0x05;
+  4918                           ;main.c: 529:     CCP3CON = 0x05;
   4919     01CE  3005               	movlw	5
   4920     01CF  0093               	movwf	19	;volatile
   4921     01D0                     i1l1730:
   4922                           
-  4923                           ;main.c: 527:     if (rise_edge_flag == 1) {
+  4923                           ;main.c: 530:     if (rise_edge_flag == 1) {
   4924     01D0  0020               	movlb	0	; select bank0
   4925     01D1  0339               	decf	ECCP3_CallBack@rise_edge_flag,w
   4926     01D2  1D03               	btfss	3,2
@@ -4983,11 +4983,11 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4931     01D6                     u111_20:
   4932     01D6                     i1l1732:
   4933                           
-  4934                           ;main.c: 528:       rise_edge_flag = 0;
+  4934                           ;main.c: 531:       rise_edge_flag = 0;
   4935     01D6  01B9               	clrf	ECCP3_CallBack@rise_edge_flag
   4936     01D7                     i1l1734:
   4937                           
-  4938                           ;main.c: 530:       if (falling_edge_time >= rising_edge_time) {
+  4938                           ;main.c: 533:       if (falling_edge_time >= rising_edge_time) {
   4939     01D7  082C               	movf	ECCP3_CallBack@rising_edge_time+1,w
   4940     01D8  0271               	subwf	ECCP3_CallBack@falling_edge_time+1,w
   4941     01D9  1D03               	skipz
@@ -5003,7 +5003,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4951     01E1                     u112_20:
   4952     01E1                     i1l1736:
   4953                           
-  4954                           ;main.c: 531:         pluse_width_HI = falling_edge_time - rising_edge_time;
+  4954                           ;main.c: 534:         pluse_width_HI = falling_edge_time - rising_edge_time;
   4955     01E1  082B               	movf	ECCP3_CallBack@rising_edge_time,w
   4956     01E2  0270               	subwf	ECCP3_CallBack@falling_edge_time,w
   4957     01E3  00AD               	movwf	ECCP3_CallBack@pluse_width_HI
@@ -5011,11 +5011,11 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4959     01E5  3B71               	subwfb	ECCP3_CallBack@falling_edge_time+1,w
   4960     01E6  00AE               	movwf	ECCP3_CallBack@pluse_width_HI+1
   4961                           
-  4962                           ;main.c: 532:       } else {
+  4962                           ;main.c: 535:       } else {
   4963     01E7  29F4               	goto	i1l475
   4964     01E8                     i1l1738:
   4965                           
-  4966                           ;main.c: 533:         pluse_width_HI = (0xffff - rising_edge_time) + falling_edge_time;
+  4966                           ;main.c: 536:         pluse_width_HI = (0xffff - rising_edge_time) + falling_edge_time;
   4967     01E8  082C               	movf	ECCP3_CallBack@rising_edge_time+1,w
   4968     01E9  00F9               	movwf	??_ECCP3_CallBack+1
   4969     01EA  082B               	movf	ECCP3_CallBack@rising_edge_time,w
@@ -5029,10 +5029,10 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4977     01F2  3D79               	addwfc	??_ECCP3_CallBack+1,w
   4978     01F3  00AE               	movwf	ECCP3_CallBack@pluse_width_HI+1
   4979     01F4                     i1l475:	
-  4980                           ;main.c: 534:       }
+  4980                           ;main.c: 537:       }
   4981                           
   4982                           
-  4983                           ;main.c: 535:       LO_us = (pluse_width_LO >> 3) & 0xff;
+  4983                           ;main.c: 538:       LO_us = (pluse_width_LO >> 3) & 0xff;
   4984     01F4  0830               	movf	ECCP3_CallBack@pluse_width_LO+1,w
   4985     01F5  00F9               	movwf	??_ECCP3_CallBack+1
   4986     01F6  082F               	movf	ECCP3_CallBack@pluse_width_LO,w
@@ -5046,7 +5046,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   4994     01FE  0878               	movf	??_ECCP3_CallBack,w
   4995     01FF  00BB               	movwf	ECCP3_CallBack@LO_us
   4996                           
-  4997                           ;main.c: 536:       HI_us = (pluse_width_HI >> 3) & 0xff;
+  4997                           ;main.c: 539:       HI_us = (pluse_width_HI >> 3) & 0xff;
   4998     0200  082E               	movf	ECCP3_CallBack@pluse_width_HI+1,w
   4999     0201  00F9               	movwf	??_ECCP3_CallBack+1
   5000     0202  082D               	movf	ECCP3_CallBack@pluse_width_HI,w
@@ -5061,7 +5061,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5009     020B  00F2               	movwf	ECCP3_CallBack@HI_us
   5010     020C                     i1l1740:
   5011                           
-  5012                           ;main.c: 537:       if (HI_us > LO_us)
+  5012                           ;main.c: 540:       if (HI_us > LO_us)
   5013     020C  0872               	movf	ECCP3_CallBack@HI_us,w
   5014     020D  023B               	subwf	ECCP3_CallBack@LO_us,w
   5015     020E  1803               	skipnc
@@ -5072,20 +5072,20 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5020     0212                     u113_20:
   5021     0212                     i1l1742:
   5022                           
-  5023                           ;main.c: 538:         diff_us = HI_us - LO_us;
+  5023                           ;main.c: 541:         diff_us = HI_us - LO_us;
   5024     0212  083B               	movf	ECCP3_CallBack@LO_us,w
   5025     0213  0272               	subwf	ECCP3_CallBack@HI_us,w
   5026     0214  00BA               	movwf	ECCP3_CallBack@diff_us
   5027     0215  2A19               	goto	i1l477
   5028     0216                     i1l1744:
   5029                           
-  5030                           ;main.c: 540:         diff_us = LO_us - HI_us;
+  5030                           ;main.c: 543:         diff_us = LO_us - HI_us;
   5031     0216  0872               	movf	ECCP3_CallBack@HI_us,w
   5032     0217  023B               	subwf	ECCP3_CallBack@LO_us,w
   5033     0218  00BA               	movwf	ECCP3_CallBack@diff_us
   5034     0219                     i1l477:
   5035                           
-  5036                           ;main.c: 542:       if (fHead == 0) {
+  5036                           ;main.c: 545:       if (fHead == 0) {
   5037     0219  0838               	movf	ECCP3_CallBack@fHead,w
   5038     021A  1D03               	btfss	3,2
   5039     021B  2A1D               	goto	u114_21
@@ -5094,13 +5094,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5042     021D  2A2D               	goto	i1l1754
   5043     021E                     u114_20:
   5044     021E                     i1l479:	
-  5045                           ;main.c: 543:         do { LATCbits.LATC4 = 1; } while(0);
+  5045                           ;main.c: 546:         do { LATCbits.LATC4 = 1; } while(0);
   5046                           
   5047     021E  0022               	movlb	2	; select bank2
   5048     021F  160E               	bsf	14,4	;volatile
   5049     0220                     i1l1746:
   5050                           
-  5051                           ;main.c: 545:         if (diff_us < (16)) {
+  5051                           ;main.c: 548:         if (diff_us < (16)) {
   5052     0220  3010               	movlw	16
   5053     0221  0020               	movlb	0	; select bank0
   5054     0222  023A               	subwf	ECCP3_CallBack@diff_us,w
@@ -5112,12 +5112,12 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5060     0227                     u115_20:
   5061     0227                     i1l1748:
   5062                           
-  5063                           ;main.c: 547:           fHead = 1;
+  5063                           ;main.c: 550:           fHead = 1;
   5064     0227  01B8               	clrf	ECCP3_CallBack@fHead
   5065     0228  0AB8               	incf	ECCP3_CallBack@fHead,f
   5066     0229                     i1l1750:
   5067                           
-  5068                           ;main.c: 548:           data_cnt = 0;
+  5068                           ;main.c: 551:           data_cnt = 0;
   5069     0229  01B7               	clrf	ECCP3_CallBack@data_cnt
   5070     022A                     i1l1752:
   5071     022A  0022               	movlb	2	; select bank2
@@ -5125,7 +5125,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5073     022C  2A8E               	goto	i1l496
   5074     022D                     i1l1754:
   5075                           
-  5076                           ;main.c: 553:         if (diff_us < (16)) {
+  5076                           ;main.c: 556:         if (diff_us < (16)) {
   5077     022D  3010               	movlw	16
   5078     022E  023A               	subwf	ECCP3_CallBack@diff_us,w
   5079     022F  1803               	skipnc
@@ -5135,13 +5135,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5083     0232  2A43               	goto	i1l489
   5084     0233                     u116_20:
   5085     0233                     i1l486:	
-  5086                           ;main.c: 555:           do { LATCbits.LATC4 = 0; } while(0);
+  5086                           ;main.c: 558:           do { LATCbits.LATC4 = 0; } while(0);
   5087                           
   5088     0233  0022               	movlb	2	; select bank2
   5089     0234  120E               	bcf	14,4	;volatile
   5090     0235                     i1l1756:
   5091                           
-  5092                           ;main.c: 556:           rx_data &= ~(1 << data_cnt);
+  5092                           ;main.c: 559:           rx_data &= ~(1 << data_cnt);
   5093     0235  3001               	movlw	1
   5094     0236  00F8               	movwf	??_ECCP3_CallBack
   5095     0237  0020               	movlb	0	; select bank0
@@ -5158,16 +5158,16 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5106     0240  0879               	movf	??_ECCP3_CallBack+1,w
   5107     0241  05F4               	andwf	_rx_data,f
   5108                           
-  5109                           ;main.c: 557:         } else {
+  5109                           ;main.c: 560:         } else {
   5110     0242  2A51               	goto	i1l488
   5111     0243                     i1l489:	
-  5112                           ;main.c: 559:           do { LATCbits.LATC4 = 1; } while(0);
+  5112                           ;main.c: 562:           do { LATCbits.LATC4 = 1; } while(0);
   5113                           
   5114     0243  0022               	movlb	2	; select bank2
   5115     0244  160E               	bsf	14,4	;volatile
   5116     0245                     i1l1758:
   5117                           
-  5118                           ;main.c: 560:           rx_data |= (1 << data_cnt);
+  5118                           ;main.c: 563:           rx_data |= (1 << data_cnt);
   5119     0245  3001               	movlw	1
   5120     0246  00F8               	movwf	??_ECCP3_CallBack
   5121     0247  0020               	movlb	0	; select bank0
@@ -5183,17 +5183,17 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5131     024F  0879               	movf	??_ECCP3_CallBack+1,w
   5132     0250  04F4               	iorwf	_rx_data,f
   5133     0251                     i1l488:	
-  5134                           ;main.c: 561:         }
+  5134                           ;main.c: 564:         }
   5135                           
   5136                           
-  5137                           ;main.c: 563:         data_cnt++;
+  5137                           ;main.c: 566:         data_cnt++;
   5138     0251  3001               	movlw	1
   5139     0252  00F8               	movwf	??_ECCP3_CallBack
   5140     0253  0878               	movf	??_ECCP3_CallBack,w
   5141     0254  07B7               	addwf	ECCP3_CallBack@data_cnt,f
   5142     0255                     i1l1760:
   5143                           
-  5144                           ;main.c: 564:         if (data_cnt > 7) {
+  5144                           ;main.c: 567:         if (data_cnt > 7) {
   5145     0255  3008               	movlw	8
   5146     0256  0237               	subwf	ECCP3_CallBack@data_cnt,w
   5147     0257  1C03               	skipc
@@ -5204,19 +5204,19 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5152     025B                     u119_20:
   5153     025B                     i1l1762:
   5154                           
-  5155                           ;main.c: 565:           fHead = 0;
+  5155                           ;main.c: 568:           fHead = 0;
   5156     025B  01B8               	clrf	ECCP3_CallBack@fHead
   5157     025C                     i1l1764:
   5158                           
-  5159                           ;main.c: 566:           data_1byte_OK = 1;
+  5159                           ;main.c: 569:           data_1byte_OK = 1;
   5160     025C  3001               	movlw	1
   5161     025D  00C3               	movwf	_data_1byte_OK	;volatile
   5162     025E  2A8E               	goto	i1l496
   5163     025F                     i1l473:	
-  5164                           ;main.c: 569:     }
+  5164                           ;main.c: 572:     }
   5165                           
   5166                           
-  5167                           ;main.c: 571:   }
+  5167                           ;main.c: 574:   }
   5168     025F  2A8E               	goto	i1l496
   5169     0260                     i1l1766:
   5170     0260  3005               	movlw	5
@@ -5229,19 +5229,19 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5177     0266                     u120_20:
   5178     0266                     i1l1768:
   5179                           
-  5180                           ;main.c: 573:     rising_edge_time = capturedValue;
+  5180                           ;main.c: 576:     rising_edge_time = capturedValue;
   5181     0266  0877               	movf	ECCP3_CallBack@capturedValue+1,w
   5182     0267  0020               	movlb	0	; select bank0
   5183     0268  00AC               	movwf	ECCP3_CallBack@rising_edge_time+1
   5184     0269  0876               	movf	ECCP3_CallBack@capturedValue,w
   5185     026A  00AB               	movwf	ECCP3_CallBack@rising_edge_time
   5186                           
-  5187                           ;main.c: 574:     CCP3CON = 0x04;
+  5187                           ;main.c: 577:     CCP3CON = 0x04;
   5188     026B  3004               	movlw	4
   5189     026C  0026               	movlb	6	; select bank6
   5190     026D  0093               	movwf	19	;volatile
   5191                           
-  5192                           ;main.c: 576:     if (rising_edge_time >= falling_edge_time) {
+  5192                           ;main.c: 579:     if (rising_edge_time >= falling_edge_time) {
   5193     026E  0871               	movf	ECCP3_CallBack@falling_edge_time+1,w
   5194     026F  0020               	movlb	0	; select bank0
   5195     0270  022C               	subwf	ECCP3_CallBack@rising_edge_time+1,w
@@ -5258,7 +5258,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5206     0279                     u121_20:
   5207     0279                     i1l1770:
   5208                           
-  5209                           ;main.c: 577:       pluse_width_LO = rising_edge_time - falling_edge_time;
+  5209                           ;main.c: 580:       pluse_width_LO = rising_edge_time - falling_edge_time;
   5210     0279  0870               	movf	ECCP3_CallBack@falling_edge_time,w
   5211     027A  022B               	subwf	ECCP3_CallBack@rising_edge_time,w
   5212     027B  00AF               	movwf	ECCP3_CallBack@pluse_width_LO
@@ -5266,11 +5266,11 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5214     027D  3B2C               	subwfb	ECCP3_CallBack@rising_edge_time+1,w
   5215     027E  00B0               	movwf	ECCP3_CallBack@pluse_width_LO+1
   5216                           
-  5217                           ;main.c: 578:     } else {
+  5217                           ;main.c: 581:     } else {
   5218     027F  2A8C               	goto	i1l1774
   5219     0280                     i1l1772:
   5220                           
-  5221                           ;main.c: 579:       pluse_width_LO = (0xffff - falling_edge_time) + rising_edge_time;
+  5221                           ;main.c: 582:       pluse_width_LO = (0xffff - falling_edge_time) + rising_edge_time;
   5222     0280  0871               	movf	ECCP3_CallBack@falling_edge_time+1,w
   5223     0281  00F9               	movwf	??_ECCP3_CallBack+1
   5224     0282  0870               	movf	ECCP3_CallBack@falling_edge_time,w
@@ -5285,7 +5285,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   5233     028B  00B0               	movwf	ECCP3_CallBack@pluse_width_LO+1
   5234     028C                     i1l1774:
   5235                           
-  5236                           ;main.c: 581:     rise_edge_flag = 1;
+  5236                           ;main.c: 584:     rise_edge_flag = 1;
   5237     028C  01B9               	clrf	ECCP3_CallBack@rise_edge_flag
   5238     028D  0AB9               	incf	ECCP3_CallBack@rise_edge_flag,f
   5239     028E                     i1l496:
@@ -5441,7 +5441,7 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 0     0      0    6240
+ (0) _main                                                 0     0      0    6600
                 _EPWM1_LoadDutyValue
                  _Exception_handling
                          _LED_output
@@ -5484,19 +5484,19 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (2) _ECCP3_Initialize                                     0     0      0       0
  ---------------------------------------------------------------------------------
- (1) _LED_output                                           3     3      0    2994
+ (1) _LED_output                                           3     3      0    3174
                                               6 BANK0      3     3      0
                              _DRL_ON
                 _EPWM1_LoadDutyValue
  ---------------------------------------------------------------------------------
- (2) _DRL_ON                                               2     2      0    1449
+ (2) _DRL_ON                                               2     2      0    1539
                                               4 BANK0      2     2      0
                 _EPWM1_LoadDutyValue
  ---------------------------------------------------------------------------------
- (1) _Exception_handling                                   0     0      0    1412
+ (1) _Exception_handling                                   0     0      0    1502
                 _EPWM1_LoadDutyValue
  ---------------------------------------------------------------------------------
- (2) _EPWM1_LoadDutyValue                                  4     2      2    1412
+ (2) _EPWM1_LoadDutyValue                                  4     2      2    1502
                                               0 BANK0      4     2      2
  ---------------------------------------------------------------------------------
  Estimated maximum stack depth 2
@@ -5657,7 +5657,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.46 build 20240104201356 
-Symbol Table                                                                                   Thu Aug 07 10:01:03 2025
+Symbol Table                                                                                   Tue Sep 02 13:39:01 2025
 
                                       _D2 0073                                        _D3 0040  
                                       l32 04A5                                        l35 04AA  

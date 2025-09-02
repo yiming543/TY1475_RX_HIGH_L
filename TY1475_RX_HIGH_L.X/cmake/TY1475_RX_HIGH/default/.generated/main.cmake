@@ -26,13 +26,18 @@ add_library(TY1475_RX_HIGH_default_default_XC8_compile OBJECT ${TY1475_RX_HIGH_d
 endif()
 
 
-add_executable(${TY1475_RX_HIGH_default_image_name} ${TY1475_RX_HIGH_default_library_list})
-set_target_properties(${TY1475_RX_HIGH_default_image_name} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TY1475_RX_HIGH_default_output_dir})
+add_executable(TY1475_RX_HIGH_default_image_TLhEDp_e ${TY1475_RX_HIGH_default_library_list})
 
-target_link_libraries(${TY1475_RX_HIGH_default_image_name} PRIVATE ${TY1475_RX_HIGH_default_default_XC8_FILE_TYPE_link})
+set_target_properties(TY1475_RX_HIGH_default_image_TLhEDp_e PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TY1475_RX_HIGH_default_output_dir})
+set_target_properties(TY1475_RX_HIGH_default_image_TLhEDp_e PROPERTIES OUTPUT_NAME "default")
+set_target_properties(TY1475_RX_HIGH_default_image_TLhEDp_e PROPERTIES SUFFIX ".elf")
+         
+
+target_link_libraries(TY1475_RX_HIGH_default_image_TLhEDp_e PRIVATE ${TY1475_RX_HIGH_default_default_XC8_FILE_TYPE_link})
+
 
 # Add the link options from the rule file.
-TY1475_RX_HIGH_default_link_rule(${TY1475_RX_HIGH_default_image_name})
+TY1475_RX_HIGH_default_link_rule(TY1475_RX_HIGH_default_image_TLhEDp_e)
 
 
 

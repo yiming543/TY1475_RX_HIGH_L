@@ -65,6 +65,9 @@
 // 修正unlock信號 亮P2
 // 修正斷線 亮近燈+行車+P2
 
+//20280902 V03 CS:F772
+//修正行車+晝行+遠燈 亮行車+P2
+
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/pin_manager.h"
 #include <pic.h>
@@ -354,7 +357,7 @@ void LED_output(void) {
     // 行車 + HIBEAM + DRL = DRL
     LoBeam_OFF(); // 近燈 OFF
     HiBeam_OFF(); // 遠燈 OFF
-    DRL_ON();     // 晝行 ON
+    POS_ON();     // POS ON
   } else if (csFlag.RunLight == 1 && csFlag.LoBeam == 1 && csFlag.HiBeam == 0 &&
              csFlag.DRL == 0) { // 12
     // 行車 + LOBEAM = 行車 + LOBEAM

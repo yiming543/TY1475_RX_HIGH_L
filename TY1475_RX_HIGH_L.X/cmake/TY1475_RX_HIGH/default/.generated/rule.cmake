@@ -29,7 +29,7 @@ function(TY1475_RX_HIGH_default_default_XC8_assemble_rule target)
         "-mdefault-config-bits"
         "-std=c99"
         "-gdwarf-3"
-        "-mstack=compiled:auto:auto:auto")
+        "-mstack=compiled:auto:auto")
     list(REMOVE_ITEM options "")
     target_compile_options(${target} PRIVATE "${options}")
     target_compile_definitions(${target}
@@ -66,7 +66,7 @@ function(TY1475_RX_HIGH_default_default_XC8_assemblePreprocess_rule target)
         "-mdefault-config-bits"
         "-std=c99"
         "-gdwarf-3"
-        "-mstack=compiled:auto:auto:auto")
+        "-mstack=compiled:auto:auto")
     list(REMOVE_ITEM options "")
     target_compile_options(${target} PRIVATE "${options}")
     target_compile_definitions(${target}
@@ -102,7 +102,7 @@ function(TY1475_RX_HIGH_default_default_XC8_compile_rule target)
         "-mdefault-config-bits"
         "-std=c99"
         "-gdwarf-3"
-        "-mstack=compiled:auto:auto:auto")
+        "-mstack=compiled:auto:auto")
     list(REMOVE_ITEM options "")
     target_compile_options(${target} PRIVATE "${options}")
     target_compile_definitions(${target}
@@ -139,7 +139,7 @@ function(TY1475_RX_HIGH_default_link_rule target)
         "-mdefault-config-bits"
         "-std=c99"
         "-gdwarf-3"
-        "-mstack=compiled:auto:auto:auto"
+        "-mstack=compiled:auto:auto"
         "-Wl,--memorysummary,memoryfile.xml")
     list(REMOVE_ITEM options "")
     target_link_options(${target} PRIVATE "${options}")
